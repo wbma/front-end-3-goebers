@@ -1,0 +1,21 @@
+
+<input [(ngModel)]="stopName" type="text" placeholder="put bus stop here">
+<br>
+<button (click)="getAllBuses()">get</button>
+
+<h1>DIGITRANSIT LIST</h1>
+<ul>
+  <li *ngFor="let i of digiArray">
+    <h4>{{ i.name }}</h4>
+    <h6>Routes: <span *ngFor="let a of i.routes">{{ a.shortName }}, </span></h6>
+  </li>
+</ul>
+
+<h1>STATIC JSON LIST</h1>
+<ul>
+  <li *ngFor="let image of mediaArray">
+    <img [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + thumbnailer(image.filename)" alt="">
+    <p>Title: {{ image.title }} </p>
+    <p>Description: {{ image.description }} </p>
+  </li>
+</ul>
